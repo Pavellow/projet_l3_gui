@@ -72,18 +72,71 @@ h1 {
 
 #homme-menu {
 	grid-column: 5;
+	border-bottom: 0px solid var(--vert);
+	font-size: 1.25rem;
+	
+}
+
+#femme-menu {
+	grid-column: 6;
+	border-bottom: 0px solid var(--vert);
+	font-size: 1.25rem;
+}
+
+#enfant-menu {
+	grid-column: 7;
+	border-bottom: 0px solid var(--vert);
+	font-size: 1.25rem;
+}
+
+#collection-menu {
+	grid-column: 8;
+	border-bottom: 0px solid var(--vert);
+	font-size: 1.25rem;
+}
+
+#homme-menu:hover {
+	border-bottom: 2px solid var(--vert);
+	color: var(--vert);
+}
+
+#femme-menu:hover {
+	border-bottom: 2px solid var(--vert);
+	color: var(--vert);
+}
+
+#enfant-menu:hover {
+	border-bottom: 2px solid var(--vert);
+	color: var(--vert);
+}
+
+#collection-menu:hover {
+	border-bottom: 2px solid var(--vert);
+	color: var(--vert);
 }
 
 #loupe {
 	grid-column: 11;
 	width: 24px;
 	cursor: pointer;
+	transition: all .4s;
+	transform-origin: center;
+}
+
+#loupe:hover {
+	transform: scale(1.5);
 }
 
 #compte {
 	grid-column: 12;
 	width: 24px;
 	cursor: pointer;
+	transition: all .4s;
+	transform-origin: center;
+}
+
+#compte:hover {
+	transform: scale(1.5);
 }
 
 #accueil {
@@ -103,14 +156,13 @@ h1 {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-auto-rows: minmax(100px, auto);
-	justify-items: center;
 	align-items: center;
 	color: var(--beige);
 	
 }
 
 #modele-presentation {
-	grid-column: 1/6;
+	grid-column: 2/5;
 	grid-row: 3;
 }
 
@@ -138,8 +190,14 @@ h1 {
 	grid-column: 4;
 	grid-row: 7;
 	text-decoration: none;
-	color: var(--gris);
-	border: 2px solid var(--gris);	
+	color: var(--vert);
+	border: 2px solid var(--vert);	
 	padding-left: 50px;
 	padding-right: 50px;
+	border-radius: 10px;
+	transition: all .4s;
+}
+
+#voir:hover {
+	transform: scale(1.15);
 }
