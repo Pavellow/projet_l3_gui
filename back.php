@@ -17,5 +17,17 @@ function getDatabase() {
     return $db;
   }
 
+
+function getShoes($sexe = NULL, $taille = NULL, $prix = NULL) {
+    $db = getDatabase();
+    $sql = "SELECT * FROM shoes where sexe = '$sexe' and taille = '$taille' and prix = '$prix'";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+
+
+
   
 ?>
