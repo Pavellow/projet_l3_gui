@@ -1,0 +1,25 @@
+#Rectangle_1 {
+	fill: rgba(249,245,234,1);
+}
+.Rectangle_1 {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 100px;
+	left: 0px;
+	top: 0px;
+}
+#SHOEPEA {
+	left: 47px;
+	top: 23px;
+	position: absolute;
+	overflow: visible;
+	width: 208px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Neue Haas Grotesk Display Pro;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 45px;
+	color: rgba(111,143,53,1);
+}
