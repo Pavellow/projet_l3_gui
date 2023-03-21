@@ -8,65 +8,157 @@
 	src: url(../font/grotesk/FreeSans.ttf);
 }
 
-body {
-	height: 100vh;
-	background-color: coral;
-	font-family: "oe", Arial, Helvetica, sans-serif;
+@media screen and (orientation: portrait) {
+	body {
+		width: 100vw;
+		height: 100vh;
+		background-color: coral;
+		font-family: "oe", Arial, Helvetica, sans-serif;
+	}
+	
+	header {
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: darkslategray;
+		color: white;
+		width: 100vw;
+		
+	}
+	
+	nav {
+		background: none;
+		display: grid;
+		place-items: center;
+	}
+	
+	ul {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	li {
+		list-style: none;
+	}
+	
+	main {
+		display: grid;
+		place-items: center;
+		grid-template-rows: minmax(100vh, auto);
+	}
+	
+	footer {
+		background-color: darkslategrey;
+		position: fixed;
+		bottom: 0;
+		color: white;
+		text-shadow: 2px 0px 2px black;
+		width: 100vw;
+	}
+	
+	#description {
+		background-color:khaki;
+		padding: 20px;
+		text-align: center;
+	}
+	
+	.boutons {
+		margin-top: 20px;
+	}
+	
+	.button-main {
+		padding: 20px;
+		width: 120px;
+	}
+
+	#container-main {
+		width: 100vw;
+		grid-row: 1;
+		display: grid;
+		place-items: center;
+	}
+
+	#img-chaus {
+		width: 100vw;
+	}
+	
 }
 
-header {
-	position: fixed;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	background-color: darkslategray;
-	color: white;
-	padding: 10px;
-	width: 100vw;
+@media screen and (orientation: landscape) {
+	body {
+		height: 100vh;
+		background-color: coral;
+		font-family: "oe", Arial, Helvetica, sans-serif;
+	}
+	
+	header {
+		position: fixed;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		background-color: darkslategray;
+		color: white;
+		padding: 10px;
+		width: 100vw;
+	}
+	
+	nav {
+		position: fixed;
+		right: 0px;
+	}
+	
+	ul {
+		display: flex;
+		flex-direction: row;
+	}
+	
+	li {
+		list-style: none;
+		margin: 50px;
+	}
+	
+	main {
+		display: grid;
+		place-items: center;
+		grid-template-rows: minmax(100vh, auto);
+	}
+	
+	footer {
+		background-color: darkslategrey;
+		padding: 20px;
+		position: fixed;
+		bottom: 0;
+		color: white;
+		text-shadow: 2px 0px 2px black;
+		width: 100%;
+	}
+	
+	#description {
+		background-color:khaki;
+		padding: 20px;
+		text-align: center;
+	}
+	
+	.boutons {
+		margin-top: 20px;
+		
+	}
+	
+	.button-main {
+		padding: 20px;
+		width: 120px;
+	}
+
+	#container-main {
+		width: 100vw;
+		grid-row: 1;
+		display: grid;
+		place-items: center;
+	}
+
+	#img-chaus {
+		width: 50vw;
+	}
 }
 
-nav {
-	position: fixed;
-	right: 0px;
-}
-
-ul {
-	display: flex;
-	flex-direction: row;
-}
-
-li {
-	list-style: none;
-	margin: 50px;
-}
-
-main {
-	display: grid;
-	place-items: center;
-	padding: 25vh;
-}
-
-footer {
-	background-color: darkslategrey;
-	padding: 20px;
-	position: fixed;
-	bottom: 0;
-	color: white;
-	text-shadow: 2px 0px 2px black;
-	width: 100%;
-}
-
-#description {
-	background-color:khaki;
-	padding: 20px;
-	text-align: center;
-}
-
-.boutons {
-	margin-top: 20px;
-}
-
-.button-main {
-	padding: 20px;
-	width: 120px;
-}
