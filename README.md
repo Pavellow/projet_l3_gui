@@ -7,7 +7,6 @@ Le site Shoepea est un site de vente de chaussures de randonnées ou acces sur l
 Les features principales sont : 
 - la connexion à un compte
 - la possibilité de gerer un panier
-- fonctionnalité de drag and drop des items dans le panier
 
 
 Le meilleur site pour acheter vos chaussures de randonnée. 
