@@ -1,5 +1,8 @@
 <?php
 
+require_once '../config/db.php';
+require '../services/connect.php'
+
 function addMember()
 {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -23,5 +26,4 @@ function addMember()
         echo "Erreur: ";
     }
 }
-
 ?>

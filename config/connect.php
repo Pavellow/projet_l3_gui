@@ -2,7 +2,7 @@
 
 require_once './config/db.php'
 
-
+function getDatabse() {
     try{
         $infos_db = 'mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME . ';charset=utf8';
         $conn = new PDO($infos_db, DB_USER, DB_PWD);
@@ -17,4 +17,5 @@ require_once './config/db.php'
     }
     
     $conn = null;
+}    
 ?>

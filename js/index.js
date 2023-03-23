@@ -60,7 +60,7 @@ function fetchData(data, cible) {
 
 }
 
-function ajaxJquery(urlParam, cible) {
+function ajaxGet(urlParam, cible) {
     $.ajax({
         url: urlParam, // URL de l'API qui renvoie les données de la table
         type: 'GET', // Type de requête HTTP (GET, POST, PUT, DELETE, etc.)
@@ -75,6 +75,6 @@ function ajaxJquery(urlParam, cible) {
 }
 
 function getdata() {
-    ajaxJquery("./services/readeleves.php", "pour-vous-div");
+    ajaxJquery("../services/add_member.php", "test");
 }
 
