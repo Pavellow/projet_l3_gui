@@ -46,6 +46,17 @@ textarea {
     font-size: 1.2rem;
 }
 
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #E3CD8B;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
 textarea {
     resize: none;
     height: 150px;
