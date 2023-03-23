@@ -63,3 +63,7 @@ button {
     transition: all 0.2s ease-in-out;
 }
 
+input[type="submit"],
+button:hover {
+transform: scale(1.15);
+  }
