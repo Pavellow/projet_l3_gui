@@ -1,8 +1,8 @@
 <?php
 
-const DB_HOST = "localhost";
-const DB_PORT = "3306";
-const DB_NAME = "shoepea";
-const DB_USER = "root";
-const DB_PWD = "";
+$DB_HOST = "localhost";
+//const DB_PORT = "3306";
+$DB_NAME = "proton";
+$DB_USER = "root";
+$DB_PWD = "";
 ?>

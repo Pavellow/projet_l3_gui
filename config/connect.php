@@ -1,21 +1,23 @@
 <?php
-
-require_once './config/db.php'
-
-function getDatabse() {
+class Database{
+    // specify your own database credentials
+    private $host = "localhost";
+    private $db_name = "proton";
+    private $username = "root";
+    private $password = "";
+    public $conn;
+    // get the database connection
+    public function getConnection(){
+    $this->conn = null;
     try{
-        $infos_db = 'mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME . ';charset=utf8';
-        $conn = new PDO($infos_db, DB_USER, DB_PWD);
-        //On définit le mode d'erreur de PDO sur Exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);        
+        $this->conn = new PDO("mysql:host=" . $this->host . ";dbname="
+    . $this->db_name, $this->username, $this->password);
+        $this->conn->exec("set names utf8");
+        echo "Etat : Connecté à la base de données.";
+    }catch(PDOException $exception){
+        echo "Connection error: " . $exception->getMessage();
     }
-    
-    /*On capture les exceptions si une exception est lancée et on affiche
-     *les informations relatives à celle-ci*/
-    catch(PDOException $e){
-      echo "Erreur : " . $e->getMessage();
+    return $this->conn;
     }
-    
-    $conn = null;
-}    
+}
 ?>
