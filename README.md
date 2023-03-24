@@ -1,4 +1,6 @@
-<p style="text-align: center">Shoepea</p>
+#Shoepea
+
+##Projet IHM L3 Corte
 
 
 
