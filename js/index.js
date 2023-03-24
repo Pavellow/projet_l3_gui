@@ -41,7 +41,7 @@ httpRequest.onreadystatechange = function () {
     }
 }
 
-httpRequest.open('GET', '..config/connect.php', true)
+httpRequest.open('GET', '.config/connect.php', true)
 httpRequest.send();
 
 function fetchData(data, cible) {
@@ -74,7 +74,4 @@ function ajaxGet(urlParam, cible) {
     });
 }
 
-function getdata() {
-    ajaxJquery("../services/add_member.php", "test");
-}
-
+ajaxJquery("./services/add_member.php", "test");

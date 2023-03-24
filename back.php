@@ -7,8 +7,8 @@ function getDatabase()
     static $db = null;
 
     if ($db == null) {
-        $dsn = 'mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME . ';charset=utf8';
-        $db = new PDO($dsn, DB_USER, DB_PWD);
+        $dsn = 'mysql:host=' . $DB_HOST . ';port=' . $DB_PORT . ';dbname=' . $DB_NAME . ';charset=utf8';
+        $db = new PDO($dsn, $DB_USER, $DB_PWD);
 
         // lever une exception si erreur
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -30,7 +30,7 @@ function addMember()
     }
 
     // Préparer la requête SQL d'insertion
-    $requete = "INSERT INTO Utilisateur (nom, prenom, email, mot_de_passe) VALUES ('$nom', '$prenom', '$email', '$mot_de_passe_chiffre')";
+    $requete = "INSERT INTO utilisateur (nom, prenom, email, mot_de_passe) VALUES ('$nom', '$prenom', '$email', '$mot_de_passe_chiffre')";
     $connexion = getDatabase();
     // Exécuter la requête SQL
     if ($connexion->query($requete) === TRUE) {
