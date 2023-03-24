@@ -1,4 +1,4 @@
-# projet_l3_gui
+<h1 style="text-align: center">Shoepea</h1>
 
 
 
