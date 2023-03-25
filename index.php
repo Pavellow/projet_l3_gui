@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="it">
+<html lang="fr">
 <?php include("./includes/head.php"); ?>
 
 <body>

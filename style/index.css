@@ -19,6 +19,11 @@
 	  place-items: center;
 	}
   
+	.logo {
+	  width: 100px;
+	  height: 100px;
+	}
+
 	h1 {
 	  margin: 10px;
 	}
@@ -97,7 +102,20 @@
 	  grid-column: 1/13;
 	  color: #E3CD8B;
 	  border-bottom: 2px solid #E3CD8B;
+	  display: flex;
+	  align-items: center;
 	}
+
+	.logo {
+		width: 100px;
+		height: auto;
+		margin-right: 10px;
+	  }
+
+	.logo, nav {
+		display: inline-block;
+		vertical-align: middle; 
+		}
 	
 	nav {
 	  display: grid;
