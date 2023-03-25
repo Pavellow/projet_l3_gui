@@ -18,12 +18,16 @@ try {
     $user = $statement->fetch(PDO::FETCH_ASSOC);
     // Vérification de la validité des identifiants
     if ($user) {
+        $update_time = $conn->prepare("UPDATE `utilisateur` SET `date_connexion`= CURRENT_TIME WHERE mail = :mail");
+        $update_time->bindParam(':mail', $_POST['mail']);
+        $update_time->execute();
         session_start();
         $_SESSION['id_utilisateur'] = $user['id_utilisateur'];
         $_SESSION['nom'] = $user['nom'];
         $_SESSION['prenom'] = $user['prenom'];
         $_SESSION['mail'] = $user['mail'];
         $_SESSION['pseudo'] = $user['pseudo'];
+
         // Redirection vers la page d'accueil du site
         header('Location: ../index.php');
         // Les identifiants sont valides, on peut connecter l'utilisateur
