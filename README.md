@@ -4,7 +4,7 @@
 
 ## Description du projet
 
-Le projet Shoepea est un projet web de recommandation de chaussures. Le site web consiste à la recommandation de chaussure à l'internaute après récolte de données. L'internaute arrive sur le site, peut se connecter, peut "swipe" vers la droite pour aimer la chaussure et la gauche pour ne pas l'aimer.
+Le projet Shoepea est un projet web de recommandation de chaussures. Le site web consiste à la recommandation de chaussure à l'internaute après récolte de données.
 
 ## Utilité du projet
 
