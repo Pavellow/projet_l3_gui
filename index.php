@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php 
+session_start(); 
+if(!empty($_SESSION['pseudo'])) {
+    setcookie('cookie_id_utilisateur', $_SESSION['id_utilisateur']);
+    setcookie('cookie_pseudo', $_SESSION['pseudo']);
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <?php include("./includes/head.php"); ?>
@@ -11,6 +17,7 @@
                 <img src="images/background.png" alt="texte" loading="lazy" class="img-chaus" id="img-chaus" />
                 <p id="description">Description</p>
             </div>
+            
             <div class="boutons">
                 <button id="bouton-non" class="button-main">Non</button>
                 <button id="bouton-retour" class="button-main">Retour</button>
