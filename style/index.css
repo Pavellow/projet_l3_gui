@@ -100,10 +100,14 @@
 	header {
 	  background-color: #6A645A;
 	  grid-column: 1/13;
-	  color: #E3CD8B;
 	  border-bottom: 2px solid #E3CD8B;
 	  display: flex;
 	  align-items: center;
+	}
+
+	header a {
+		color: #E3CD8B; /* les textes auront la bonne couleur quand ils seront cliquables */
+		text-decoration: none;
 	}
 
 	.logo {
