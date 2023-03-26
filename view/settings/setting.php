@@ -10,7 +10,7 @@ session_start();
     <title>Settings</title>
 </head>
 <body>
-    <?php include("../includes/settings_header.php"); ?>
-    <?php include("../includes/settings_account.php"); ?>
+    <?php include("../../includes/settings_header.php"); ?>
+    <?php include("../../includes/settings_account.php"); ?>
 </body>
 </html>

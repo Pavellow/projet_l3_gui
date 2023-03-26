@@ -3,7 +3,7 @@
     
     <nav>
         <ul>
-            <li><a href="./view/setting.php">parametres</a></li>
+            <li><a href="./view/settings/setting.php">parametres</a></li>
             <?php
             if (!empty($_SESSION['pseudo'])) {
             ?><li><a><?php echo ($_SESSION['pseudo']); ?></a></li><?php
