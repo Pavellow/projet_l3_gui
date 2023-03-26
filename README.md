@@ -1,17 +1,18 @@
-# Shoepea
+# SHOEPEA
 
-## Projet IHM L3 Corte
+<p align="center"><img width="50%" src="images/logo/png/logo.png"/></p>
 
+## Description du projet
 
+Le projet Shoepea est un projet web de recommandation de chaussures. Le site web consiste à la recommandation de chaussure à l'internaute après récolte de données.
 
-Le site Shoepea est un site de vente de chaussures de randonnées ou acces sur la nature dans le meme style que stockX. 
+## Utilité du projet
 
-Les features principales sont : 
-- la connexion à un compte
-- la possibilité de gerer un panier
+Ce projet permet à l'internaute de trouver une paire de chaussure qui lui plait. Le site est destiné en premier aux téléphones portables, et peut être dans un futur plus ou moins proche, d'être transformée en application mobile. 
 
+Bien que le projet soit un site web, on essaie surtout de se concentrer sur la collecte de donnée éthique ainsi que la disposition d'un GUI intuitif et d'une expérience UI/UX satisfaisante. Cela permet aussi de mettre en place les bonnes pratiques en IHM et d'éviter les "dark patterns".
 
-Le meilleur site pour acheter vos chaussures de randonnée. 
-ShoePEA regroupe vos chaussures preferees, dans une interface facile d'utilisation. 
-Vous etes fatigués des sites de e-commerce aux boutons qui ne marche pas, avec ShoePEA glissez simplement le modele de vos reves a droite pour l'ajouter dans votre panier, et a gauche pour l'ajouter dans le comparateur et en bas pour le supprimer du panier.
-A court d'idée, ou vous ne savez pas ce dont vous avez besoin ? notre algorithme de recommendation vous conseille pour faire l'achat parfait. 
+## Prise en main utilisateur
+
+Bien que le site soit en développement actuellement, le site sera hébergé sur un serveur web distant avec un nom de domaine. Il suffira alors de rentrer l'URL dans la barre de recherche pour accéder au site.
+Arrivé sur le site, vous pourrez soit vous inscrire, soit vous connecter si vous avez un compte, soit utiliser le site mais avec des fonctionnalités en moins.
