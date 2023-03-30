@@ -13,11 +13,15 @@
 	header {
 	  background-color: #6A645A;
 	  grid-column: 1/13;
-	  color: #E3CD8B;
 	  border-bottom: 2px solid #E3CD8B;
 	  display: grid;
 	  place-items: center;
 	}
+  
+	  header a {
+		  color: #E3CD8B; /* les textes auront la bonne couleur quand ils seront cliquables */
+		  text-decoration: none;
+	  }
   
 	.logo {
 	  width: 100px;
@@ -164,11 +168,11 @@
 		padding: 20px;
 		position: fixed;
 		bottom: 0;
-		color: white;
+		color: #E3CD8B;
 		text-shadow: 2px 0px 2px black;
 		width: 100%;
 		border-top: 2px solid #E3CD8B;
-	}
+	  }
 	
 	footer p {
 		margin: 10px;
@@ -182,7 +186,7 @@
 	footer a:hover {
 		text-decoration: underline;
 	}
-	
+
 	.compte_unique h3 {
 			font-size: 2em;
 			text-align: center;
