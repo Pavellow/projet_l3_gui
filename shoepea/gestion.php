@@ -29,6 +29,25 @@ function getChaussure($chaussure)
 }
 
 
+function getChaussureFromList($ids){
+    $db = getDatabase();
+    $sql = "SELECT * FROM Chaussure WHERE id_chaussure IN ('$ids')";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+function getChaussureTags($tag)
+{
+    $db = getDatabase();
+    $sql = "SELECT * FROM Chaussure INNER JOIN Chaussure_tags ON Chaussure.id_chaussure=Chaussure_tags.id_chaussure WHERE id_chaussure = $chaussure";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
 function getInfos($chaussure)
 {
     $db = getDatabase();
