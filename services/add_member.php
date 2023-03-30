@@ -29,7 +29,7 @@ try {
     // Exécuter la requête SQL
     try {
         $prep->execute();
-        header('Location ../index.php');        
+        header('Location: ../index.php');        
         exit();
     } catch (PDOException $exception) {
         echo ("Connection error: " . $exception->getMessage());
