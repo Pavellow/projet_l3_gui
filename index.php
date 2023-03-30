@@ -1,10 +1,10 @@
 <?php 
-session_start(); 
+session_start(); // On démarre la session AVANT toute chose
 if(!empty($_SESSION['pseudo'])) {
     setcookie('cookie_id_utilisateur', $_SESSION['id_utilisateur']);
     setcookie('cookie_pseudo', $_SESSION['pseudo']);
 }
-else {
+else { // Si le pseudo n'existe pas dans la session, on redirige vers la page de connexion
     header('Location: ./view/connexion.html');
 }
 ?>
