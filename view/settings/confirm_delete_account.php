@@ -13,5 +13,9 @@ session_start();
     
     <?php include("../../includes/settings_header.php"); ?>
     <p>Êtes-vous sûr(e) de vouloir modifier votre compte ?</p>
+    <div class="center">
+        <a href="../../services/authentificate.php">Oui</a>
+        <a href="../">Non</a>
+    </div>
 </body>
 </html>
