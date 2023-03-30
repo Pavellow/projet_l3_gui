@@ -4,7 +4,7 @@
   }
   
   @media screen and (orientation: portrait) {
-	body {
+	.body_php {
 	  display: grid;
 	  grid-template-columns: repeat(12, 1fr);
 	  grid-template-rows: minmax(10vh, auto);
@@ -88,10 +88,11 @@
 	  width: 100%;
 	  border-top: 2px solid #E3CD8B;
 	}
+	
   }
   
   @media screen and (orientation: landscape) {
-	body {
+	.body_php {
 	  display: grid;
 	  grid-template-columns: repeat(12, 1fr);
 	  grid-template-rows: minmax(10vh, auto);
@@ -182,4 +183,40 @@
 		text-decoration: underline;
 	}
 	
-}
+	.compte_unique h3 {
+			font-size: 2em;
+			text-align: center;
+			margin: 30px 0;
+	}
+		
+	.compte_unique nav {
+			display: flex;
+			justify-content: center;
+		}
+		
+	.compte_unique ul {
+			display: flex;
+			flex-direction: column;
+			list-style: none;
+		}
+		
+	.compte_unique li {
+			margin: 20px 0;
+			text-align: center;
+		}
+		
+	.compte_unique a {
+			color: #6A645A;
+			text-decoration: none;
+			font-weight: bold;
+			border: 2px solid #6A645A;
+			padding: 10px 20px;
+			border-radius: 10px;
+			transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		}
+		
+	.compte_unique a:hover {
+			background-color: #6A645A;
+			color: #E3CD8B;
+		}
+	}

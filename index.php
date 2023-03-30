@@ -12,7 +12,7 @@ else {
 <html lang="fr">
 <?php include("./includes/head.php"); ?>
 
-<body>
+<body class="body_php">
     <?php include("./includes/header.php"); ?>
     <main>
         <div id="container-main">
