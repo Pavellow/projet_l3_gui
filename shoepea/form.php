@@ -1,22 +1,6 @@
 <?php 
 require_once 'db.php';
 
-function getDatabase() {
-    static $db = null;
-  
-    if ($db == null) {
-      $dsn = 'mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME . ';charset=utf8';
-      $db = new PDO($dsn, DB_USER, DB_PWD);
-  
-      // lever une exception si erreur
-      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-  
-    return $db;
-  }
-
-
-
 function getShoes() {
     $db = getDatabase();
     $id= $_POST['number'];
@@ -27,9 +11,9 @@ function getShoes() {
   }
 
 
-/*foreach (getShoes() as $shoe) {
+foreach (getShoes() as $shoe) {
     echo $shoe['modèle'];
-  }*/
+  }
 
   function ggetShoes() {
     $db = getDatabase();
@@ -39,10 +23,10 @@ function getShoes() {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-/*    foreach (ggetShoes() as $shoe) {
+foreach (ggetShoes() as $shoe) {
         echo $shoe['modèle'];
         echo '<br>';
-    }*/
+    }
 
 function getShoesSexe($id){
     $db = getDatabase();
