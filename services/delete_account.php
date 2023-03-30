@@ -26,6 +26,7 @@ try {
                     $del->execute();
                     echo ("Compte supprimé");
                     session_destroy();
+                    header("Location: ../index.php");
                 } else {
                     echo ("Mot de passe incorrect");
                 }
