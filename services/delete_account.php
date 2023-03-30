@@ -41,9 +41,7 @@ try {
     }
     else {
         echo("Un des champs n'a pas été entré correctement");
-    }
-    
-    
+    }    
 }
 catch(PDOException $e) {
     echo("Erreur lors de la suppression du compte :" . $e->getMessage());
