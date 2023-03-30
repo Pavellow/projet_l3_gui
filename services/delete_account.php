@@ -26,6 +26,7 @@ try {
                     $del->execute();
                     echo ("Compte supprimé");
                     session_destroy();
+                    header("Location: ../index.php");
                 } else {
                     echo ("Mot de passe incorrect");
                 }
@@ -40,9 +41,7 @@ try {
     }
     else {
         echo("Un des champs n'a pas été entré correctement");
-    }
-    
-    
+    }    
 }
 catch(PDOException $e) {
     echo("Erreur lors de la suppression du compte :" . $e->getMessage());
