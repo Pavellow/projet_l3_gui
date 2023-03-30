@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 30, 2023 at 08:10 AM
--- Server version: 5.7.30
--- PHP Version: 7.4.9
+-- Generation Time: Mar 30, 2023 at 11:33 AM
+-- Server version: 5.7.34
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ShoePEA`
+-- Database: `ShoePPEA`
 --
 
 -- --------------------------------------------------------
@@ -148,16 +149,23 @@ CREATE TABLE `Chaussure_Tags` (
   `id_tag` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `Chaussure_Tags`
+-- Table structure for table `historique_navigation_utilisateur`
 --
 
-INSERT INTO `Chaussure_Tags` (`id_chaussure`, `id_tag`) VALUES
-(1, 1),
-(1, 2),
-(19, 7),
-(1, 72),
-(1, 77);
+CREATE TABLE `historique_navigation_utilisateur` (
+  `id_visite` int(11) NOT NULL,
+  `id_utilisateur` int(11) NOT NULL,
+  `url_page` varchar(255) NOT NULL,
+  `titre_page` varchar(255) NOT NULL,
+  `date_visite` date NOT NULL,
+  `duree_visite` int(64) NOT NULL COMMENT 'Durée en millisecondes',
+  `ip_utilisateur` varchar(39) NOT NULL,
+  `navigateur_utilisateur` varchar(255) NOT NULL,
+  `os_utilisateur` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -260,6 +268,31 @@ INSERT INTO `Tags` (`id_tag`, `nom_tag`, `type_tag`) VALUES
 (82, 'Skate', 'Utilité'),
 (83, 'Sans talon', 'Type de talon');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `utilisateur`
+--
+
+CREATE TABLE `utilisateur` (
+  `id_utilisateur` int(11) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `mail` varchar(64) NOT NULL,
+  `motdepasse` varchar(128) NOT NULL,
+  `pseudo` varchar(32) DEFAULT NULL,
+  `date_inscription` datetime DEFAULT NULL,
+  `date_connexion` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `mail`, `motdepasse`, `pseudo`, `date_inscription`, `date_connexion`) VALUES
+(41, 'Vinciguerra', 'Paul-Antoine', 'polo2b1.pav@gmail.com', 'aze', 'Galeag', '2023-03-25 13:25:19', '2023-03-30 09:57:32'),
+(63, 'aer', 'et', 'e@e.fr', 'aze', 'aze', '2023-03-27 11:22:50', '2023-03-27 13:22:54');
+
 --
 -- Indexes for dumped tables
 --
@@ -278,10 +311,23 @@ ALTER TABLE `Chaussure_Tags`
   ADD KEY `fk_tag` (`id_tag`);
 
 --
+-- Indexes for table `historique_navigation_utilisateur`
+--
+ALTER TABLE `historique_navigation_utilisateur`
+  ADD PRIMARY KEY (`id_visite`),
+  ADD KEY `id_utilisateur` (`id_utilisateur`);
+
+--
 -- Indexes for table `Tags`
 --
 ALTER TABLE `Tags`
   ADD PRIMARY KEY (`id_tag`);
+
+--
+-- Indexes for table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  ADD PRIMARY KEY (`id_utilisateur`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -294,10 +340,22 @@ ALTER TABLE `Chaussure`
   MODIFY `id_chaussure` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
+-- AUTO_INCREMENT for table `historique_navigation_utilisateur`
+--
+ALTER TABLE `historique_navigation_utilisateur`
+  MODIFY `id_visite` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `Tags`
 --
 ALTER TABLE `Tags`
   MODIFY `id_tag` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+
+--
+-- AUTO_INCREMENT for table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- Constraints for dumped tables
@@ -309,6 +367,7 @@ ALTER TABLE `Tags`
 ALTER TABLE `Chaussure_Tags`
   ADD CONSTRAINT `fk_chaussure` FOREIGN KEY (`id_chaussure`) REFERENCES `Chaussure` (`id_chaussure`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_tag` FOREIGN KEY (`id_tag`) REFERENCES `Tags` (`id_tag`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
