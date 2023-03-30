@@ -2,6 +2,7 @@
 
 if(!empty($_SESSION['pseudo'])) {
     ?>
+    <div class="compte_unique"> 
     <h3>Compte</h3>
     <nav>
         <ul>
@@ -11,7 +12,7 @@ if(!empty($_SESSION['pseudo'])) {
             <li><a href="../services/change_mail.php">Changer l'adresse e-mail</a></li>
         </ul>
     </nav>
-
+    </div>
     <?php
 }
 
