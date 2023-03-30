@@ -31,5 +31,8 @@ else {
     <?php include("./includes/footer.php"); ?>
 </body>
 <script src="js/jquery.min.js"></script>
+<script src="js/cards/model/card.js"></script>
+<script src="js/cards/view/card_display.js"></script>
+<script src="js/cards/controller/card_controller.js"></script>
 <script src="js/index.js"></script>
 </html>

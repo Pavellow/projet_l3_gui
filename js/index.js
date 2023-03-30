@@ -1,4 +1,4 @@
-var getHttpRequest = function () {
+/*var getHttpRequest = function () {
     var httpRequest = false;
 
     if (window.XMLHttpRequest) {
@@ -75,3 +75,15 @@ function ajaxGet(urlParam, cible) {
 }
 
 ajaxJquery("./services/add_member.php", "test");
+*/
+
+const cart = import("./cards/Slider.js");
+
+
+
+var carteUn = new Carte("oe", "oe", "oe", "oe", "oe");
+
+carteUn.show_console();
+
+
+carteUn.show_console();
