@@ -4,6 +4,16 @@ require_once 'db.php';
 $chaussure = $_GET['chaussure'];
 
 
+function getChaussureimage($id){
+    $db = getDatabase();
+    $sql = "SELECT * FROM Chaussure WHERE id_chaussure = $id";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $shoe) {
+        return $shoe['image'];
+    }
+}
+
 
 function addChaussureTags($id_tag)
 {
@@ -61,6 +71,7 @@ function getInfos($chaussure)
 
 
 echo getChaussure($chaussure);
+echo '<img src="', getChaussureimage($chaussure), '" alt="', getChaussure($chaussure), '">';
 echo '<br>';
 echo 'Voici les tags de cette chaussure :';
 echo '<br>';
