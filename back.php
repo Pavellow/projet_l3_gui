@@ -1,5 +1,5 @@
 <?php
-require_once './config/db.php';
+require_once './config/db.php'; // Database connection
 
 
 function getDatabase()
@@ -16,7 +16,7 @@ function getDatabase()
 
     return $db;
 }
-function addMember()
+function addMember() // ajout d'un membre 
 {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Récupérer les données du formulaire
