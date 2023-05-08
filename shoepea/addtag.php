@@ -2,7 +2,8 @@
 require_once 'db.php';
 
 $chaussure = $_POST['chaussure'];
-$tag = $_POST['tag'];
+$tags = $_POST['tags'];
+
 
 echo $chaussure;
 echo '<br>';
@@ -17,9 +18,15 @@ function addChaussureTags($id_chaussure,$id_tag){
     $stmt->bindParam(':id_chaussure', $id_chaussure);
     $stmt->bindParam(':id_tag', $id_tag);
     $stmt->execute();
-    echo "<script>alert('Tag ajouté !')</script>";
     
 }
 
 
-addChaussureTags($chaussure,$tag);
+
+
+foreach($tags as $tag) {
+    addChaussureTags($chaussure,$tag);
+}
+
+
+header('Location: gestion.php?chaussure='.$chaussure.'');

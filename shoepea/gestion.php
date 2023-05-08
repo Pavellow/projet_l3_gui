@@ -104,7 +104,7 @@ function getTag()
 echo '<br>';
 echo 'Ajouter un tag :';
 echo '<form action="addtag.php" method="post">';
-echo '<select name="tag">';
+echo '<select name="tags[]" multiple>';
 foreach (getTag() as $tag) {
     echo '<option value="', $tag['id_tag'], '">', $tag['id_tag'], " - ", $tag['nom_tag'], '</option>';
 }
