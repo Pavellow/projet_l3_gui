@@ -2,13 +2,13 @@
     <nav>
         <ul>
             <li>
-                <p>HOME</p>
+                <a href="../index.php">HOME</a>
             </li>
             <li>
-                <p>SHOES</p>
+                <a href="search.php">SHOES</a>
             </li>
             <li>
-                <p>ACCOUNT</p>
+                <a href="account.php">ACCOUNT</a>
             </li>
         </ul>
     </nav>

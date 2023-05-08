@@ -1,0 +1,28 @@
+#welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#welcome p {
+    color: var(--blanc);
+    font-size: 2rem;
+    font-family: "Grotesk", Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#connect {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--blanc);
+    color: var(--noir);
+    font-size: 1.5rem;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: 2px solid var(--blanc);
+    border-radius: 10px;
+}

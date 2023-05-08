@@ -1,0 +1,84 @@
+#welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#welcome p {
+    color: var(--blanc);
+    font-size: 2rem;
+    font-family: "Grotesk", Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form {
+    display: grid;
+    place-content: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80vw;
+    align-items: center;
+    color: var(--blanc);
+    font-family: "Grotesk", Arial, Helvetica, sans-serif;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+form * {    
+    margin-top: 10px;
+}
+
+form input {
+    padding: 20px;
+    background: none;
+    border: 2px solid var(--blanc);
+    border-radius: 10px;
+    color: var(--blanc);
+    font-family: "Grotesk", Arial, Helvetica, sans-serif;
+}
+
+form input:focus {
+    border: 2px solid var(--vert);
+}
+
+form button {
+    background-color: var(--vert);
+    color: var(--blanc);
+    padding: 20px;
+    margin-top: 100px;
+    border-radius: 10px;
+    font-family: "Grotesk", Arial, Helvetica, sans-serif;
+    border: none;
+    font-size: 1.5rem;
+}
+
+form button:active {
+    transform: scale(.95);
+}
+
+#signup {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#signup > a {
+    text-decoration: none;
+    background-color: var(--orange);
+    color: var(--noir);
+    font-family: "Grotesk", Arial, Helvetica, sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#signup > a:active {
+    transform: scale(.95);
+}
