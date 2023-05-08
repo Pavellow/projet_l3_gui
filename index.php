@@ -20,7 +20,7 @@ else { // Si le pseudo n'existe pas dans la session, on redirige vers la page de
                 <img src="images/background.png" alt="texte" loading="lazy" class="img-chaus" id="img-chaus" />
                 <p id="description">Description</p>
             </div>
-            <img src="https://images.stockx.com/360/Air-Jordan-3-Retro-White-Cement-Reimagined/Images/Air-Jordan-3-Retro-White-Cement-Reimagined/Lv2/img01.jpg" alt="lien pas valide" />
+            <a href="info.php?id=1"><img src="https://images.stockx.com/360/Air-Jordan-3-Retro-White-Cement-Reimagined/Images/Air-Jordan-3-Retro-White-Cement-Reimagined/Lv2/img01.jpg" alt="Air Jordan 3 Retro White Cement Reimagined" /></a>
             <div class="boutons">
                 <button id="bouton-non" class="button-main">Non</button>
                 <button id="bouton-retour" class="button-main">Retour</button>
