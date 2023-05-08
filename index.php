@@ -1,19 +1,13 @@
 <?php 
-session_start(); // Démarrage de la session
-
-// Vérification si l'utilisateur est connecté
+session_start(); // On démarre la session AVANT toute chose
 if(!empty($_SESSION['pseudo'])) {
-    // Si l'utilisateur est connecté, on crée deux cookies pour stocker son id et son pseudo
     setcookie('cookie_id_utilisateur', $_SESSION['id_utilisateur']);
     setcookie('cookie_pseudo', $_SESSION['pseudo']);
 }
-else { 
-    // Si l'utilisateur n'est pas connecté, on le redirige vers la page de connexion
-    header('Location: ./view/connect.php');
+else { // Si le pseudo n'existe pas dans la session, on redirige vers la page de connexion
+    header('Location: http://127.0.0.1/IHM/View/connect.php');
 }
 ?>
-
-<!-- Début du code HTML -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -25,11 +19,15 @@ else {
     <title>Accueil</title>
 </head>
 <body>
-    <?php require_once("./includes/header.php");?> <!-- Inclusion de l'en-tête -->
+    <?php require_once("./includes/header.php");?>
     <div id="welcome">
-        <p>Bienvenue.</p> <!-- Message de bienvenue -->
+        <p>Bienvenue.</p>
     </div>
-    <p>Bonjour, <?php echo($_SESSION["pseudo"]); ?> <!-- Affichage du pseudo de l'utilisateur -->
-    <?php require_once("./includes/footer.php");?> <!-- Inclusion du pied de page -->
+    <p id="welcome-message">Bonjour, <?php echo($_SESSION["pseudo"]); ?>
+
+    <a id="search-shoes" class="center" href="./View/search.php">Rechercher</a>
+
+    <?php require_once("./includes/footer.php");?>
 </body>
+<script src="./Controller/User/User.js"></script>
 </html>

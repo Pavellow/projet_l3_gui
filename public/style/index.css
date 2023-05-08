@@ -1,3 +1,17 @@
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 #welcome {
     display: flex;
     justify-content: center;
@@ -10,7 +24,7 @@
     font-size: 2rem;
     font-family: "Grotesk", Arial, Helvetica, sans-serif;
     text-align: center;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 #connect {
@@ -31,4 +45,13 @@
     margin-top: 50px;
     text-align: center;
     color: var(--blanc);
+}
+
+#search-shoes {
+    color: var(--noir);
+    background-color: var(--blanc);
+    padding: 20px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 10px;
 }

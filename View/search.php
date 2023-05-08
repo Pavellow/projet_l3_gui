@@ -1,3 +1,13 @@
+<?php 
+session_start(); // On démarre la session AVANT toute chose
+if(!empty($_SESSION['pseudo'])) {
+    setcookie('cookie_id_utilisateur', $_SESSION['id_utilisateur']);
+    setcookie('cookie_pseudo', $_SESSION['pseudo']);
+}
+else { // Si le pseudo n'existe pas dans la session, on redirige vers la page de connexion
+    header('Location: http://127.0.0.1/IHM/View/connect.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,13 +15,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/style/main.css">
-    <link rel="stylesheet" href="./public/style/search.css">
+    <link rel="stylesheet" href="../public/style/main.css">
+    <link rel="stylesheet" href="../public/style/search.css">
     <title>Recherche</title>
 </head>
 
 <body>
-    <?php require_once("./includes/header.php"); ?>
+    <?php require_once("../includes/header.php"); ?>
     <form method="post">
         <div class="accordion">
             <div class="accordion-item">
@@ -26,40 +36,40 @@
                         <input type="checkbox" name="couleur-primaire-noir" value="Noir"> Noir
                     </label>
                     <label>
-                        <input type="checkbox" name="couleur-primaire-blanc" value="Rouge"> Blanc
+                        <input type="checkbox" name="couleur-primaire-blanc" value="Blanc"> Blanc
                     </label>
                     <label>
-                        <input type="checkbox" name="couleur-primaire-bleu" value="Rouge"> Bleu
+                        <input type="checkbox" name="couleur-primaire-bleu" value="Bleu"> Bleu
                     </label>
                     <label>
-                        <input type="checkbox" name="couleur-primaire-vert" value="Rouge"> Vert
+                        <input type="checkbox" name="couleur-primaire-vert" value="Vert"> Vert
                     </label>
                     <label>
-                        <input type="checkbox" name="couleur-primaire-jaune" value="Rouge"> Jaune
+                        <input type="checkbox" name="couleur-primaire-jaune" value="Jaune"> Jaune
                     </label>
                     <label>
-                        <input type="checkbox" name="couleur-primaire-marron" value="Rouge"> Marron
+                        <input type="checkbox" name="couleur-primaire-marron" value="Marron"> Marron
                     </label>
                     <label>
-                        <input type="checkbox" name="couleur-primaire-gris" value="Rouge"> Gris
+                        <input type="checkbox" name="couleur-primaire-gris" value="Gris"> Gris
                     </label>
                     <label>
-                        <input type="checkbox" name="couleur-primaire-rose" value="Rouge"> Rose
+                        <input type="checkbox" name="couleur-primaire-rose" value="Rose"> Rose
                     </label>
                     <label>
-                        <input type="checkbox" name="couleur-primaire-violet" value="Rouge"> Violet
+                        <input type="checkbox" name="couleur-primaire-violet" value="Violet"> Violet
                     </label>
                     <label>
-                        <input type="checkbox" name="couleur-primaire-orange" value="Rouge"> Orange
+                        <input type="checkbox" name="couleur-primaire-orange" value="Orange"> Orange
                     </label>
                     <label>
-                        <input type="checkbox" name="couleur-primaire-or" value="Rouge"> Or
+                        <input type="checkbox" name="couleur-primaire-or" value="Or"> Or
                     </label>
                     <label>
-                        <input type="checkbox" name="couleur-primaire-argent" value="Rouge"> Argent
+                        <input type="checkbox" name="couleur-primaire-argent" value="Argent"> Argent
                     </label>
                     <label>
-                        <input type="checkbox" name="couleur-primaire-bronze" value="Rouge"> Bronze
+                        <input type="checkbox" name="couleur-primaire-bronze" value="Bronze"> Bronze
                     </label>
                 </div>
             </div>
@@ -182,7 +192,7 @@
                         <input type="checkbox" name="fermeture-boucle" value="Lacets"> Boucle
                     </label>
                     <label>
-                        <input type="checkbox" name="fermeture-eclair" value="Lacets"> Eclair
+                        <input type="checkbox" name="fermeture-eclair" value="Eclair"> Eclair
                     </label>
                 </div>
             </div>
@@ -192,7 +202,7 @@
                 </div>
                 <div class="accordion-content">
                     <label>
-                        <input type="checkbox" name="style-baskets" value="baskets"> Baskets/Sneakers
+                        <input type="checkbox" name="style-baskets" value="Baskets"> Baskets/Sneakers
                     </label>
                     <label>
                         <input type="checkbox" name="style-bottes" value="Bottes"> Bottes
@@ -303,9 +313,9 @@
     </form>
 
     </div>
-    <?php require_once("./includes/footer.php"); ?>
+    <?php require_once("../includes/footer.php"); ?>
 </body>
 
-<script src="./View/Search/search.js"></script>
+<script src="Search/search.js"></script>
 
 </html>
