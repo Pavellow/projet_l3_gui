@@ -36,3 +36,12 @@ function get_all_preferences($id_utilisateur)
 
     return $other_users_prefs;
 }
+
+function getShoes()
+{
+    global $db;
+    $stmt = $db->getConnection()->prepare("SELECT * FROM chaussure");
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}

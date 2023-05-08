@@ -1,6 +1,6 @@
 <?php
 
-require_once('Model/reco.php');
+require_once('Model/recommendations.php');
 
 
 function calculate_similarite($prefs1, $prefs2)
@@ -34,7 +34,8 @@ function calculate_similarite($prefs1, $prefs2)
     return $num / $den;
 }
 
-function get_similar_users($id_utilisateur){
+function get_similar_users($id_utilisateur)
+{
     $user_prefs = get_preferences($id_utilisateur);
     $other_users_prefs = get_all_preferences($id_utilisateur);
     $similarities = array();
@@ -94,4 +95,24 @@ function get_user_based_recommendations($id_utilisateur, $num_recommendations)
     $recommended_id_chaussures = array_keys($top_recommendations);
 
     return $recommended_id_chaussures;
+}
+
+
+function getShoesByTags($tags)
+{
+
+    $shoes = getShoes();
+
+    // Calculer le nombre de tags en commun pour chaque chaussure
+    foreach ($shoes as &$shoe) {
+        $shoe['common_tags'] = count(array_intersect($tags, $shoe['tags']));
+    }
+
+    // Trier les chaussures par ordre décroissant de nombre de tags en commun
+    usort($shoes, function ($a, $b) {
+        return $b['common_tags'] - $a['common_tags'];
+    });
+
+    // Retourner les 5 premières chaussures
+    return array_slice($shoes, 0, 5);
 }
