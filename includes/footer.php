@@ -1,0 +1,15 @@
+<footer>
+    <nav>
+        <ul>
+            <li>
+                <p>HOME</p>
+            </li>
+            <li>
+                <p>SHOES</p>
+            </li>
+            <li>
+                <p>ACCOUNT</p>
+            </li>
+        </ul>
+    </nav>
+</footer>
