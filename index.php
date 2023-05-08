@@ -1,13 +1,19 @@
 <?php 
-session_start(); // On démarre la session AVANT toute chose
+session_start(); // Démarrage de la session
+
+// Vérification si l'utilisateur est connecté
 if(!empty($_SESSION['pseudo'])) {
+    // Si l'utilisateur est connecté, on crée deux cookies pour stocker son id et son pseudo
     setcookie('cookie_id_utilisateur', $_SESSION['id_utilisateur']);
     setcookie('cookie_pseudo', $_SESSION['pseudo']);
 }
-else { // Si le pseudo n'existe pas dans la session, on redirige vers la page de connexion
+else { 
+    // Si l'utilisateur n'est pas connecté, on le redirige vers la page de connexion
     header('Location: ./view/connect.php');
 }
 ?>
+
+<!-- Début du code HTML -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,11 +25,11 @@ else { // Si le pseudo n'existe pas dans la session, on redirige vers la page de
     <title>Accueil</title>
 </head>
 <body>
-    <?php require_once("./includes/header.php");?>
+    <?php require_once("./includes/header.php");?> <!-- Inclusion de l'en-tête -->
     <div id="welcome">
-        <p>Bienvenue.</p>
+        <p>Bienvenue.</p> <!-- Message de bienvenue -->
     </div>
-    <p>Bonjour, <?php echo($_SESSION["pseudo"]); ?>
-    <?php require_once("./includes/footer.php");?>
+    <p>Bonjour, <?php echo($_SESSION["pseudo"]); ?> <!-- Affichage du pseudo de l'utilisateur -->
+    <?php require_once("./includes/footer.php");?> <!-- Inclusion du pied de page -->
 </body>
 </html>

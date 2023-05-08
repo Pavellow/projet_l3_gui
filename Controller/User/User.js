@@ -14,14 +14,15 @@ class User {
         data.append('motdepasse', this.mdp);
 
         xhr.onload = function() {
-            if(xhr.statux === 200) {
-                console.log("test");
+            if(xhr.status === 200) {
+                window.location = "../index.php";
+            }
+            else {
+                console.log(xhr.response);
             }
         }
 
         xhr.open(method, url);
-        xhr.send()
-
-        
+        xhr.send(data);        
     }
 }
