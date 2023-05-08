@@ -2,48 +2,54 @@
 <html lang="fr">
 
 <head>
+  <!-- Méta-données de la page -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Liens vers les fichiers CSS -->
   <link rel="stylesheet" href="./public/style/main.css">
   <link rel="stylesheet" href="./public/style/cartes.css">
+
+  <!-- Titre de la page -->
   <title>Cartes</title>
 </head>
 
 <body>
+  <!-- Entête de la page -->
   <header>
     <h1>SHOEPEA.</h1>
     <!-- <img src="public/img/logo.png" /> -->
   </header>
+
+  <!-- Section pour les cartes de chaussures -->
   <div class="tinder">
     <div class="tinder--cards">
+      <!-- Carte 1 -->
       <div class="tinder--card" id="card-one">
-        <img
-          src="https://images.stockx.com/images/Air-Jordan-1-Retro-Low-OG-SP-Travis-Scott-Olive-W-Product.jpg?fit=fill&bg=FFFFFF&w=600&h=600&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1679667531&q=57"
-          >
+        <img src="https://images.stockx.com/images/Air-Jordan-1-Retro-Low-OG-SP-Travis-Scott-Olive-W-Product.jpg?fit=fill&bg=FFFFFF&w=600&h=600&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1679667531&q=57">
         <h3>Chaussure 1</h3>
         <p>Libellé de la chaussure 1</p>
       </div>
+
+      <!-- Carte 2 -->
       <div class="tinder--card" id="card-two">
-        <img
-          src="https://images.stockx.com/images/Air-Jordan-4-Retro-Thunder-2023-Product.jpg?fit=fill&bg=FFFFFF&w=600&h=600&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1680288788&q=57"
-          >
+        <img src="https://images.stockx.com/images/Air-Jordan-4-Retro-Thunder-2023-Product.jpg?fit=fill&bg=FFFFFF&w=600&h=600&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1680288788&q=57">
         <h3>Chaussure 2</h3>
         <p>Libellé de la chaussure 2</p>
       </div>
+
+      <!-- Carte 3 -->
       <div class="tinder--card" id="card-three">
-        <img
-          src="https://images.stockx.com/images/Air-Jordan-3-Retro-White-Cement-Reimagined-Product.jpg?fit=fill&bg=FFFFFF&w=600&h=600&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1678266994&q=57"
-          >
+        <img src="https://images.stockx.com/images/Air-Jordan-3-Retro-White-Cement-Reimagined-Product.jpg?fit=fill&bg=FFFFFF&w=600&h=600&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1678266994&q=57">
         <h3>Chaussure 3</h3>
         <p>Libellé de la chaussure 3</p>
       </div>
+
+      <!-- Carte limite -->
       <div class="tinder--card limited">
-
         <h3>:(</h3>
-        <p>Pour l'instant, notre base de données n'est pas assez fournie en terme de chaussures, on vous permettra d'en
-          choisir plus au fur et à mesure que la base de données grandira.</p>
-
+        <p>Pour l'instant, notre base de données n'est pas assez fournie en terme de chaussures, on vous permettra d'en choisir plus au fur et à mesure que la base de données grandira.</p>
         <p>Comptez sur nous !</p>
       </div>
     </div>
