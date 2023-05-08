@@ -1,4 +1,5 @@
 class Stocker {
+  
     constructor(id) {
         this.id = id;
         this.stock = new Array();

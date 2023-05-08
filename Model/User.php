@@ -5,7 +5,7 @@ class User
     // specify your own database credentials
     public $username;
     public $password;
-    public $email;
+    public $mail;
     public $nom;
     public $prenom;
 
@@ -52,7 +52,7 @@ class User
 
         $statement = $this->conn->prepare($query);
 
-        $statement->bindParam(":mail", $this->email);
+        $statement->bindParam(":mail", $this->mail);
         $statement->bindParam(":motdepasse", $this->password);
 
         if ($statement->execute()) {
@@ -64,7 +64,7 @@ class User
                 $_SESSION['prenom'] = $user['prenom'];
                 $_SESSION['mail'] = $user['mail'];
                 $_SESSION['pseudo'] = $user['pseudo'];
-                header('Location: ../index.php');
+                /* header('Location: ../index.php'); */
             }
         }
     }
