@@ -34,11 +34,12 @@ if (isset($_GET['id_chaussure'])) {
 <html>
 <head>
     <title>Informations sur la chaussure</title>
+    <link rel="stylesheet" href="style/index.css">
 </head>
 <body>
     <h1><?php echo $chaussure['modèle']; ?></h1>
     
-    <img src="<?php echo $chaussure['photo']; ?>" alt="Photo de la chaussure">
+    <!-- <img src="<?php echo $chaussure['photo']; ?>" alt="Photo de la chaussure"> -->
 
     <!-- <p><?php echo $chaussure['description']; ?></p> -->
 
