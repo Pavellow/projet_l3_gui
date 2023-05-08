@@ -1,24 +1,34 @@
-// Sélection de tous les éléments avec la classe "accordion-item"
 const accordionItems = document.querySelectorAll('.accordion-item');
+const form = document.querySelector("form");
+const checkboxes = document.querySelectorAll("input[type='checkbox']")
+const checkedCheckboxes = [];
 
-// Parcours de tous les éléments de l'accordion
 accordionItems.forEach(item => {
-  // Sélection de l'en-tête et du contenu
-  const header = item.querySelector('.accordion-header');
-  const content = item.querySelector('.accordion-content');
+    const header = item.querySelector('.accordion-header');
+    const content = item.querySelector('.accordion-content');
 
-  // Ajout d'un événement de clic sur l'en-tête
-  header.addEventListener('click', () => {
-    // Bascule de la classe "active" du contenu
-    content.classList.toggle('active');
+    header.addEventListener('click', () => {
+        content.classList.toggle('active');
 
-    // Si la classe "active" est présente
-    if (content.classList.contains('active')) {
-      // Affichage du contenu en mode "flex"
-      content.style.display = 'flex';
-    } else {
-      // Sinon, le contenu est masqué
-      content.style.display = 'none';
-    }
-  });
+        if (content.classList.contains('active')) {
+            content.style.display = 'flex';
+        } else {
+            content.style.display = 'none';
+        }
+    });
 });
+
+
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    checkboxes.forEach(checkbox => {
+        if(checkbox.checked) {
+            checkedCheckboxes.push(checkbox.value);
+            
+        }
+    });
+    
+    var search = new Search();
+
+})

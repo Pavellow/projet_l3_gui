@@ -1,5 +1,5 @@
 class Stocker {
-  
+
     constructor(id) {
         this.id = id;
         this.stock = new Array();
@@ -8,6 +8,5 @@ class Stocker {
     display() {
       console.log(this.id, this.stock);
     }
-
     
 }

@@ -1,6 +1,6 @@
 <?php
 session_start();
 session_destroy();
-header('Location: ../index.php');
+header('Location: http://127.0.0.1/IHM/index.php');
 exit();
 ?>
