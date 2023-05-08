@@ -8,7 +8,7 @@ class Database
     private $host = "localhost";
     private $db_name = "shoepea";
     private $username = "root";
-    private $password = "root";
+    private $password = "";
 
     public $conn;
 
@@ -25,10 +25,12 @@ class Database
         }
         return $this->conn;
     }
+
     public function disconnect()
     {
         $this->conn = null;
     }
+    
     public function isConnected()
     {
         if ($this->conn) {

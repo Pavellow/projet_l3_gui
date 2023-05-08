@@ -23,7 +23,7 @@ else { // Si le pseudo n'existe pas dans la session, on redirige vers la page de
     <div id="welcome">
         <p>Bienvenue.</p>
     </div>
-    <p>Bonjour, <?php echo($_SESSION["pseudo"]); ?>
+    <p id="welcome-message">Bonjour, <?php echo($_SESSION["pseudo"]); ?>
     <?php require_once("./includes/footer.php");?>
 </body>
 </html>
