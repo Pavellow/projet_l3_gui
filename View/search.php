@@ -309,6 +309,10 @@ else { // Si le pseudo n'existe pas dans la session, on redirige vers la page de
             <div id="submit-btn">
                 <button type="submit">Chercher</button>                
             </div>
+            
+            <div id="skip">
+                <a href="./cartes.php">Outrepasser recherche</a>
+            </div>
 
     </form>
 
@@ -316,6 +320,7 @@ else { // Si le pseudo n'existe pas dans la session, on redirige vers la page de
     <?php require_once("../includes/footer.php"); ?>
 </body>
 
-<script src="Search/search.js"></script>
+<script src="../Controller/Search/Search.js"></script>
+<script src="../View/Search/search.js"></script>
 
 </html>

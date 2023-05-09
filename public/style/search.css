@@ -45,3 +45,22 @@ button[type="submit"] {
     border-radius: 10px;
     font-family: "Grotesk", Arial, Helvetica, sans-serif;
 }
+
+#skip {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#skip a {
+    padding: 20px;
+    color: var(--blanc);
+    text-decoration: none;
+    border: 2px solid var(--blanc);
+    font-family: "Grotesk Light", Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    background: none;
+    border-radius: 10px;
+}

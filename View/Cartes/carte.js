@@ -1,9 +1,13 @@
 'use strict'; // On force le navigateur a exécuter le code tel quel
-
 var tinderContainer = document.querySelector('.tinder');
 var allCards = document.querySelectorAll('.tinder--card');
-var nope = document.getElementById('nope');
-var love = document.getElementById('love');
+
+
+
+var container_cards = document.querySelector(".tinder--cards");
+
+var cardGetter = new Carte();
+cardGetter.readAll();
 
 function initCards(card, index) {
   var newCards = document.querySelectorAll('.tinder--card:not(.removed)');
@@ -79,54 +83,20 @@ allCards.forEach(function (el) {
 
     if (keep) { // Si l'utilisateur lache la carte sans l'avoir liké ou disliké
       event.target.style.transform = ''; // On la remet à sa place initiale
-      
+
     } else {
       var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
       var toX = event.deltaX > 0 ? endX : -endX;
       var endY = Math.abs(event.velocityY) * moveOutWidth;
       var toY = event.deltaY > 0 ? endY : -endY;
       var xMulti = event.deltaX * 0.03;
-      var yMulti = event.deltaY / 20;
+      var yMulti = event.deltaY / 80;
       var rotate = xMulti * yMulti;
 
-      if(toX > 0) { // Si l'utilisateur a liké on fait :
-        console.log("bon choix :)");
-      }
-      else { // Sinon on fait :
-        console.log("dommage :(");
-      }
 
       event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
+      
       initCards();
     }
   });
 });
-
-function createButtonListener(love) {
-  return function (event) {
-    var cards = document.querySelectorAll('.tinder--card:not(.removed)');
-    var moveOutWidth = document.body.clientWidth * 1.5;
-
-    if (!cards.length) return false;
-
-    var card = cards[0];
-
-    card.classList.add('removed');
-
-    if (love) {
-      card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
-    } else {
-      card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
-    }
-
-    initCards();
-
-    event.preventDefault();
-  };
-}
-
-var nopeListener = createButtonListener(false);
-var loveListener = createButtonListener(true);
-
-nope.addEventListener('click', nopeListener);
-love.addEventListener('click', loveListener);

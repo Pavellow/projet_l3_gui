@@ -1,7 +1,7 @@
 const accordionItems = document.querySelectorAll('.accordion-item');
 const form = document.querySelector("form");
 const checkboxes = document.querySelectorAll("input[type='checkbox']")
-const checkedCheckboxes = [];
+var checkedCheckboxes = [];
 
 accordionItems.forEach(item => {
     const header = item.querySelector('.accordion-header');
@@ -27,8 +27,14 @@ form.addEventListener("submit", function(event) {
             checkedCheckboxes.push(checkbox.value);
             
         }
+        
     });
-    
     var search = new Search();
+    search.result = checkedCheckboxes;
+
+    search.send_result();
+    checkedCheckboxes = [];
+    
+    
 
 })
