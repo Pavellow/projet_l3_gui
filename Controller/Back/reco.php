@@ -2,6 +2,8 @@
 
 require_once('Model/recommendations.php');
 
+require_once('Model/Database.php');
+
 
 function calculate_similarite($prefs1, $prefs2)
 {
@@ -98,21 +100,29 @@ function get_user_based_recommendations($id_utilisateur, $num_recommendations)
 }
 
 
-function getShoesByTags($tags)
+function getshoesbytag($tags)
 {
+    // Convertir le tableau de tags en une chaîne de caractères
+    $tag_list = implode(',', $tags);
 
-    $shoes = getShoes();
+    $db = new Database();
 
-    // Calculer le nombre de tags en commun pour chaque chaussure
-    foreach ($shoes as &$shoe) {
-        $shoe['common_tags'] = count(array_intersect($tags, $shoe['tags']));
-    }
 
-    // Trier les chaussures par ordre décroissant de nombre de tags en commun
-    usort($shoes, function ($a, $b) {
-        return $b['common_tags'] - $a['common_tags'];
-    });
+    // Requête SQL pour chercher les chaussures correspondantes
+    $sql = "SELECT c.id_chaussure, c.modèle, c.image, COUNT(*) AS nb_tags
+            FROM Chaussure c
+            JOIN Chaussure_Tags ct ON c.id_chaussure = ct.id_chaussure
+            JOIN Tags t ON ct.id_tag = t.id_tag
+            WHERE t.nom_tag IN ($tag_list)
+            GROUP BY c.id_chaussure
+            ORDER BY nb_tags DESC
+            LIMIT 5";
 
-    // Retourner les 5 premières chaussures
-    return array_slice($shoes, 0, 5);
+    // Exécution de la requête SQL
+    $stmt = $db->getConnection()->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+    return $result;
 }
