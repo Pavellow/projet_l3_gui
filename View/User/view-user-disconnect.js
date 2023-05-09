@@ -1,8 +1,8 @@
 var btn = document.querySelector("header button");
 
 btn.addEventListener("click", function() {
-    var user = new User();
-    user.disconnect();
+    var a = new Utilisateur();
+    a.disconnect();
     console.log("disconnect");
     
 });

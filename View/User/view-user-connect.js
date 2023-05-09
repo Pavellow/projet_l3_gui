@@ -4,8 +4,8 @@ var mdp = document.querySelector("#motdepasse");
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();
-    var user = new User();
-    user.username = mail.value;
-    user.mdp = mdp.value;
-    user.connect();
+    var oe = new Utilisateur();
+    oe.username = mail.value;
+    oe.mdp = mdp.value;
+    oe.connect();
 });

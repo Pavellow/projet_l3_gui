@@ -21,10 +21,7 @@ if (!empty($_SESSION['pseudo'])) {
 </head>
 
 <body>
-  <header>
-    <h1>SHOEPEA.</h1>
-    <!-- <img src="public/img/logo.png" /> -->
-  </header>
+<?php require_once("../includes/header.php"); ?>
   <div class="tinder">
     <div class="tinder--cards">
       <!-- <div class="tinder--card">

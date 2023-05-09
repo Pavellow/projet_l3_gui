@@ -47,3 +47,14 @@ function getShoes()
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+function getShoe($id)
+{
+    global $db;
+    $query = "SELECT * FROM chaussure WHERE id_chaussure = :id";
+    $statement = $db->getConnection()->prepare($query);
+    $statement->bindParam(":id", $id);
+    $statement->execute();
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}

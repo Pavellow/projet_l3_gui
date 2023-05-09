@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <?php require_once("../includes/header-noaccount.php"); ?>
+    <?php require_once("../includes/header.php"); ?>
     <div id="welcome">
         <p>Se connecter</p>
     </div>

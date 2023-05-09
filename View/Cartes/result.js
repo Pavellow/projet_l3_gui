@@ -7,7 +7,7 @@ var allCards = document.querySelectorAll('.tinder--card');
 var container_cards = document.querySelector(".tinder--cards");
 
 var cardGetter = new Carte();
-cardGetter.readAll("../Controller/Cards/php/get_all.php");
+cardGetter.read("../Controller/Search/php/send_result.php");
 
 var iter = 0;
 

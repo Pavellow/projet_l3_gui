@@ -1,14 +1,14 @@
-class User {
-    constructor(username, mdp) {
-        this.username = username;
-        this.mdp = mdp;
+class Utilisateur {
+    constructor(username_param, mdp_param) {
+        this.username = username_param;
+        this.mdp = mdp_param;
     }
 
     connect() {
         var xhr = new XMLHttpRequest();
         var data = new FormData();
         var method = "POST";
-        var url = "../Controller/User/php/connect_account.php";
+        var url = "http://127.0.0.1/IHM/Controller/User/php/connect_account.php";
 
         data.append('mail', this.username);
         data.append('motdepasse', this.mdp);
