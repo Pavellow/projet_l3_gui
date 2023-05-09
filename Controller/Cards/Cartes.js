@@ -52,9 +52,9 @@ class Carte {
                 h3.innerText = element.modèle;
                 container_card.appendChild(h3);
 
-                var p = document.createElement('p');
+                /* var p = document.createElement('p');
                 p.innerText = "libelle";
-                container_card.appendChild(p);
+                container_card.appendChild(p); */
 
                 Carte.initCards();
 
@@ -134,10 +134,11 @@ class Carte {
 
                 hammerInstance.on('swipeleft', () => {
                     // console.log('Balayage vers la gauche détecté sur la carte ' + element.modèle);
+                    Carte.like(element.id_chaussure, 0);
                 });
                 hammerInstance.on('swiperight', () => {
                     // console.log('Balayage vers la droite détecté sur la carte ' + element.modèle);
-                    Carte.like(self.id_chaussure, 1);
+                    Carte.like(element.id_chaussure, 1);
                 });
 
                 container_cards.appendChild(container_card);
