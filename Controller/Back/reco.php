@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../Model/recommendations.php');
+require_once('../../../Model/recommendations.php');
 
 
 function calculate_similarite($prefs1, $prefs2)
@@ -52,6 +52,7 @@ function get_similar_users($id_utilisateur)
 
 function get_user_based_recommendations($id_utilisateur, $num_recommendations)
 {
+    $id_utilisateur = (int)$id_utilisateur;
     // Récupération des préférences de chaussures de l'utilisateur
     $user_shoe_preferences = get_preferences($id_utilisateur);
 
@@ -63,8 +64,8 @@ function get_user_based_recommendations($id_utilisateur, $num_recommendations)
 
     // Parcours des utilisateurs similaires
     foreach ($similar_users as $similar_user) {
-        $similar_id_utilisateur = $similar_user[0];
-        $similarite_score = $similar_user[1];
+        $similar_id_utilisateur = $similar_user["id_utilisateur"];
+        $similarite_score = $similar_user["similarite_score"];
 
         // Récupération des préférences de chaussures de l'utilisateur similaire
         $similar_user_shoe_preferences = get_preferences($similar_id_utilisateur);
@@ -72,7 +73,7 @@ function get_user_based_recommendations($id_utilisateur, $num_recommendations)
         // Parcours des préférences de chaussures de l'utilisateur similaire
         foreach ($similar_user_shoe_preferences as $similar_user_shoe_preference) {
             $id_chaussure = $similar_user_shoe_preference[0];
-            $shoe_rating = $similar_user_shoe_preference[1];
+            $shoe_rating = isset($similar_user_shoe_preference[1]) ? $similar_user_shoe_preference[1] : 0;
 
             // Vérification que l'utilisateur n'a pas déjà noté cette chaussure
             if (!array_key_exists($id_chaussure, $user_shoe_preferences)) {
@@ -117,6 +118,4 @@ function getShoesByTags($tags)
     $arr = array_slice($shoes, 0, 5);
     echo(json_encode($arr));
 }
-
-getShoesByTags($_POST);
 ?>

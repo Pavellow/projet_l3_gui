@@ -6,7 +6,7 @@
   
   .tinder {
     width: 100vw;
-    height: 80vh;
+    height: 75vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -136,3 +136,7 @@
     color: #CDD6DD;
   }
   
+
+  #go {
+    opacity: 0;
+  }

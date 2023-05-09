@@ -9,6 +9,8 @@ var container_cards = document.querySelector(".tinder--cards");
 var cardGetter = new Carte();
 cardGetter.readAll();
 
+var iter = 0;
+
 function initCards(card, index) {
   var newCards = document.querySelectorAll('.tinder--card:not(.removed)');
 
@@ -92,6 +94,8 @@ allCards.forEach(function (el) {
       var xMulti = event.deltaX * 0.03;
       var yMulti = event.deltaY / 80;
       var rotate = xMulti * yMulti;
+
+
 
 
       event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';

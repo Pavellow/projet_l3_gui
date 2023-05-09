@@ -40,24 +40,12 @@ if (!empty($_SESSION['pseudo'])) {
       </div> -->
     </div>
   </div>
-  <footer>
-    <nav>
-      <ul>
-        <li>
-          <p>HOME</p>
-        </li>
-        <li>
-          <p>SHOES</p>
-        </li>
-        <li>
-          <p>ACCOUNT</p>
-        </li>
-      </ul>
-    </nav>
-  </footer>
+  <div id="go">
+    <a href="./result.php">Accéder</a>
+  </div>
+  <?php require_once("../includes/footer.php"); ?>
 </body>
 <script src="../jquery.js"></script>
-
 <script src="../hammer.js"></script>
 <script src="../Controller/Cards/Cartes.js"></script>
 <script src="./Cartes/carte.js"></script>

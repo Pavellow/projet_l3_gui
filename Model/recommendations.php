@@ -21,7 +21,7 @@ function get_preferences($id_utilisateur)
 function get_all_preferences($id_utilisateur)
 {
     global $db;
-    $stmt = $db->getConnection()->prepare("SELECT id_utilisateur, id_chaussure, rating FROM shoe_preferences WHERE id_utilisateur != :id_utilisateur");
+    $stmt = $db->getConnection()->prepare("SELECT id_utilisateur, id_chaussure, likedislike FROM utilisateur_like WHERE id_utilisateur != :id_utilisateur");
     $stmt->execute(array(':id_utilisateur' => $id_utilisateur));
 
     // Stocker les préférences de chaussures de tous les autres utilisateurs dans un tableau associatif
@@ -29,7 +29,7 @@ function get_all_preferences($id_utilisateur)
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $id_utilisateur = $row['id_utilisateur'];
         $id_chaussure = $row['id_chaussure'];
-        $rating = $row['rating'];
+        $rating = $row['likedislike'];
         if (!isset($other_users_prefs[$id_utilisateur])) {
             $other_users_prefs[$id_utilisateur] = array();
         }
@@ -42,7 +42,7 @@ function get_all_preferences($id_utilisateur)
 function getShoes()
 {
     global $db;
-    $stmt = $db->getConnection()->prepare("SELECT * FROM chaussure");
+    $stmt = $db->getConnection()->prepare("SELECT * FROM chaussure_tags");
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;

@@ -21,7 +21,7 @@ class Carte {
         var xhr = new XMLHttpRequest();
         var formdata = new FormData();
 
-        xhr.onload = function() {
+        xhr.onload = function () {
             console.log(xhr.response);
         }
 
@@ -30,9 +30,10 @@ class Carte {
 
         xhr.open("POST", "../Controller/Cards/php/like.php");
         xhr.send(formdata);
-    }    
+    }
 
     readAll() {
+        var iter = 0;
         var xhr = new XMLHttpRequest();
         xhr.open('GET', "../Controller/Cards/php/get_all.php");
 
@@ -120,9 +121,21 @@ class Carte {
 
                         if (toX > 0) { // Si l'utilisateur a liké on fait :
                             console.log("bon choix :)");
+                            iter++;
+                            console.log(iter);
+                            if(iter === 5) {
+                                var btn = document.querySelector("#go");
+                                btn.style.opacity = "1";
+                            }
                         }
                         else { // Sinon on fait :
                             console.log("dommage :(");
+                            iter++;
+                            console.log(iter);
+                            if(iter === 5) {
+                                var btn = document.querySelector("#go");
+                                btn.style.opacity = "1";
+                            }
                         }
 
                         event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
@@ -131,15 +144,17 @@ class Carte {
                     }
                 });
 
-
                 hammerInstance.on('swipeleft', () => {
                     // console.log('Balayage vers la gauche détecté sur la carte ' + element.modèle);
-                    Carte.like(element.id_chaussure, 0);
+                    /* Carte.like(element.id_chaussure, 0); */
                 });
                 hammerInstance.on('swiperight', () => {
                     // console.log('Balayage vers la droite détecté sur la carte ' + element.modèle);
-                    Carte.like(element.id_chaussure, 1);
+                    /* Carte.like(element.id_chaussure, 1); */
+
                 });
+
+                
 
                 container_cards.appendChild(container_card);
             });
